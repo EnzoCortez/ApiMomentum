@@ -1,0 +1,6 @@
+@ApiMomentum_HostAddress = http://localhost:5122
+
+GET {{ApiMomentum_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
