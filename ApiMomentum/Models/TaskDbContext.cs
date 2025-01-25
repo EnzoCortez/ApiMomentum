@@ -1,8 +1,7 @@
-﻿using ApiMomentum.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace TaskAPI.Models
+namespace ApiMomentum.Models
 {
     public class TaskDbContext : DbContext
     {

@@ -1,7 +1,6 @@
 ﻿using ApiMomentum.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TaskAPI.Models;
 
 namespace TaskAPI.Controllers
 {

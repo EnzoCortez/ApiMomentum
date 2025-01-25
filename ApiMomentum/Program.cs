@@ -1,20 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TaskAPI.Models;
+﻿using ApiMomentum.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configurar la conexión a SQL Server
 builder.Services.AddDbContext<TaskDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// 🔹 Habilitar CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll",
-        policy => policy.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader());
-});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -30,10 +21,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// 🔹 Aplicar CORS antes de Authorization
-app.UseCors("AllowAll");
-
 app.UseAuthorization();
 app.MapControllers();
 
